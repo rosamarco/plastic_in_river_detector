@@ -9,3 +9,4 @@ Il progetto è stato sviluppato nell'ambito del progetto finale del corso di Vis
 
 
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rosamarco/plastic_in_river_detector/blob/main/notebook.ipynb)
