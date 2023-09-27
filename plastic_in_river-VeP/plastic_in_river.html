@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- VeP http://web.unibas.it/bloisi/corsi/visione-e-percezione.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Plastic in River Detector</title>
+	<!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detection of plastic in rivers">
+    <meta name="author" content="Bonelli Antonella, Calocero Simona and Rosa Marco adapted a 3rd Wave Media template">
+    <link rel="shortcut icon" href="http://web.unibas.it/bloisi/tutorial/favicon.ico">  
+    <link href="plastic_in_river_files/css.txt" rel="stylesheet" type="text/css">
+    <link href="plastic_in_river_files/css1.txt" rel="stylesheet" type="text/css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="plastic_in_river_files/bootstrap.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="plastic_in_river_files/font-awesome.css">
+        
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="plastic_in_river_files/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">
+            <img class="profile-image img-responsive pull-left" src="assets/bottle_in_river.jpeg"
+                 alt="Plastic bottle in river" width="300"/>
+            <div class="profile-content pull-right">
+				<img class="profile-image img-responsive pull-left"
+				    src="http://web.unibas.it/bloisi/assets/images/logo.png"
+					alt="unibas logo" height=97 width=312/>
+				<p>&nbsp;</p>
+				<h3 class="desc">
+                    <a href="http://web.unibas.it/bloisi/corsi/visione-e-percezione.html" target="_blank">
+                        Corso di Visione e Percezione
+                    </a>
+				</h3>
+			</div>
+            <div class="profile-content pull-left">
+                <h1 class="name">Plastic in River Detector</h1>
+                <h2 class="desc">Computer Vision for the environment</h2>
+            </div>
+
+
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+			
+			    <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading" id="introduction">Introduction</h2>
+                        <div class="content">
+                            <p>
+                                This project aims to train a <b>CNN</b> (Convolutional Neural Network) model for the detection
+                                and classification of <b>plastic pollution in rivers</b>.<br/>
+                                The detector will classify objects into four distinct classes:
+                                <ul>
+                                    <li>plastic bottles</li>
+                                    <li>plastic bags</li>
+                                    <li>other plastic waste</li>
+                                    <li>non-plastic items</li>
+                               </ul>
+                                For the realization we will use the <b>YOLO</b> (You Only Look Once) algorithm and the <b>Darknet</b> framework,
+                                all working on a <b>Colab</b> notebook.
+							</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading" id="motivations">Motivations</h2>
+                        <div class="content">
+                            <p>
+                                Detecting plastic in rivers is a significant environmental challenge due to the increasing
+                                widespread plastic pollution of waterways and hence of oceans.</br>
+                                Monitor rivers with cameras placed along them that are able to detect in real time
+                                the presence of plastic in water could be very useful, for instance notifying the competent authorities
+                                in order to clean up the place.
+                            </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+			
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="goals"></a>Goals</h2>
+                        <div class="content">
+                            <p>
+                                Project main objectives:
+                            </p>
+							<ol>
+								<li>Explore the dataset</li>
+								<li>Train a CNN</li>
+								<li>Detect objects of interest</li>
+							</ol>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="method"></a>Method</h2>
+                        <div class="content">
+                            <p>Descrivere il procedimento utilizzato per risolvere il problema,
+							evidenziando quali algoritmi noti sono stati utilizzati</p>
+                            <p>Per esempio:<br>
+							<ul>
+							    <li>Corner detector di Harris</li>
+								<li>SIFT</li>
+								<li>CNN</li>								
+                            </ul>
+							</p>			
+                                                     
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="implementation"></a>Implementation and Code</h2>
+                        <div class="content">
+                            <p>Descrivere la tecnologia utilizzata per risolvere il problema</p>
+							<p>Per esempio:<br>
+							<ul>
+							    <li>Python 3</li>
+								<li>ROS Melodic</li>
+								<li>OpenCV 4.2</li>								
+                            </ul>
+							</p>
+							
+							<p style="color: red">Link al repository Git con il codice<br>
+							Il codice deve contenere un file README con le istruzioni per eseguire il codice</p>
+                                                     
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="dataset"></a>Dataset</h2>
+                        <div class="content">
+                            <p>Descrivere i dati utilizzati fornendo i link per il download</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="results"></a>Results</h2>
+                        <div class="content">
+							<h3>Qualitative Results</h3>
+							<p>Fornire esempi di applicazione del metodo con immagini e video</p>
+							<h3>Quantitative Results</h3>
+							<p>Fornire una descrizione delle performance del metodo usando
+							delle opportune metriche</p>
+							<p>Per esempio:<br>
+							Fornire su un numero di immagini non inferiore a 30 i dati relativi
+							a FP, FN, TP.							
+							</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+            </div><!--//primary-->
+            
+			<div class="secondary col-md-4 col-sm-12 col-xs-12">
+                <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Authors</h2>
+                        <div class="content">
+                            <p>Bonelli Antonella, 68791</p>
+                            <p>Calocero Simona, 68395</p>
+                            <p>Rosa Marco, 60315</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->
+
+                <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Table of Contents</h2>
+                        <div class="content" style="text-align:left;">
+                            <p><a href="#introduction">Introduction</a></p>
+                            <p><a href="#motivations">Motivations</a></p>
+                            <p><a href="#goals">Goals</a></p>
+                            <p><a href="#method">Method</a></p>
+                            <p><a href="#implementation">Implementation and Code</a></p>
+                            <p><a href="#results">Results</a></p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
+
+
+                <aside class="blog aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">References and Links</h2>
+						<div class="content">
+							<div class="item">
+								<a href="https://pjreddie.com/darknet/" target="_blank">
+                                    Darknet
+                                </a>
+                            </div>
+                            <div class="item">
+								<a href="https://pjreddie.com/darknet/yolo/" target="_blank">
+                                    YOLO
+                                </a>
+                            </div>
+                            <div class="item">
+								<a href="https://docs.roboflow.com/" target="_blank">
+                                    Roboflow
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://huggingface.co/docs/datasets/index" target="_blank">
+                                    Datasets
+                                </a>
+                            </div>
+                            <div class="item">
+								<a href="https://colab.research.google.com/" target="_blank">
+                                    Colab
+                                </a>
+                            </div>
+                            <div class="item">
+								<a href="http://web.unibas.it/bloisi/corsi/visione-e-percezione.html" target="_blank">
+                                    Visione e Percezione course page
+                                </a>
+							</div>
+							<div class="item">
+								<a href="http://web.unibas.it/bloisi/" target="_blank">
+                                    Domenico Bloisi's home page
+                                </a>
+							</div>
+
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->                            
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+                <small class="copyright">This template adapted from <a href="http://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+</body></html>
