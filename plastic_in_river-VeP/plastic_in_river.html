@@ -22,7 +22,47 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+        </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="plastic_in_river_files/splide.min.js"></script>
+    <link rel="stylesheet" href="plastic_in_river_files/splide.min.css">
+    <script src="plastic_in_river_files/splide-extension-video.min.js"></script>
+    <link rel="stylesheet" href="plastic_in_river_files/splide-extension-video.min.css">
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Splide.defaults = {
+                    keyboard: true,
+                    paginationKeyboard: true,
+                }
+
+                
+
+                let video = new Splide('#video-carousel', {
+                    type     : 'loop',
+                    height   : 'full',
+                    focus    : 'center',
+                    gap:    '5rem',
+                    autoWidth: true,
+                });
+                video.mount(window.splide.Extensions);
+                let confusion = new Splide('#confusion-carousel', {
+                    type     : 'loop',
+                    width    : '95%',
+                    focus    : 'center',
+                    autoHeight: true,
+                });
+                confusion.mount();
+            });
+    </script>
 </head> 
 
 <body>
@@ -110,17 +150,84 @@
 				<section class="about section">
                     <div class="section-inner">
                         <h2 class="heading"><a id="method"></a>Method</h2>
-                        <div class="content">
-                            <p>Descrivere il procedimento utilizzato per risolvere il problema,
-							evidenziando quali algoritmi noti sono stati utilizzati</p>
-                            <p>Per esempio:<br>
-							<ul>
-							    <li>Corner detector di Harris</li>
-								<li>SIFT</li>
-								<li>CNN</li>								
+                        <div class="content">			
+                            <h4>Object Detection</h4>
+
+                            <p>YOLO (You Only Look Once) is a real-time object detection algorithm first developed
+                                in
+                                2015. It is a single-stage object detector that uses a convolutional neural network
+                                (CNN) to predict the bounding boxes and class probabilities of objects in input
+                                images.
+                            </p>
+
+                            <p>One of the key advantages of YOLO is that it processes the entire image in one
+                                forward
+                                pass, making it faster and more efficient than two-stage object detector methods, as
+                                it
+                                eliminates the need for multiple stages making it suitable for applications such as
+                                real-time video analytics even on low-powered devices.</p>
+
+                            <p>The basic idea behind YOLO algorithm can be broken down into several steps:</p>
+
+                            <ol>
+                                <li>Input image is passed through a CNN to extract features from the image.</li>
+                                <li>The features are then passed through a series of fully connected layers, which
+                                    predict class probabilities and bounding box coordinates.</li>
+                                <li>The image is divided into a grid of cells, and each cell is responsible for
+                                    predicting a set of bounding boxes and class probabilities.</li>
+                                <li>The output of the network is a set of bounding boxes and class probabilities for
+                                    each cell.</li>
+                                <li>The bounding boxes are then filtered using a post-processing algorithm called
+                                    non-max suppression to remove overlapping boxes and choose the box with the
+                                    highest
+                                    probability.
+                                </li>
+                                <li>The final output is a set of predicted bounding boxes and class labels for each
+                                    object in the image.</li>
+                            </ol>
+                            <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/yolo.png" style="width: 80%;"></div>
+                            <p>YOLO has been developed in several versions, including YOLOv1 through YOLOv8. Each
+                                version has been built on top of the previous version
+                                with enhanced features such as improved accuracy, faster processing, and better
+                                handling
+                                of small objects.</p>
+                            <p>In this project In this project, we used the latest iteration of these YOLO models:
+                                <b>YOLOv8</b> released in 2023 by <a
+                                    href="https://docs.ultralytics.com/">Ultralytics</a>.
+                            </p>
+                            <p>YOLO models are pre-trained on huge datasets such as COCO and ImageNet.
+                                They provide highly accurate predictions on classes they are pre-trained on
+                                and can also give the opportunity to fine-tune the model on a custom dataset.
+                            </p>
+                            <p>Fine-tuning involves training the model on new data for a certain number of epochs.
+                                During fine-tuning, the model adjusts its parameters to better adapt to the
+                                characteristics and objects present in the dataset.</p>
+
+                            <h4>Dataset Preparation</h4>
+                            <p>The dataset used in this project was created using proprietary images and images
+                                obtained
+                                from RoboFlow Universe. Specifically, <a
+                                    href="https://orca-tech.cn/en/datasets/FloW/FloW-Img">FloW-Img</a> and <a
+                                    href="https://universe.roboflow.com/ipsa-4wlge/wcb5g/dataset/17">WCB5G</a> were
+                                combined.</p>
+                            <p>Annotations were standardized into two categories:
+                            <ul>
+                                <li><b>WASTE</b></li>
+                                <li><b>DEBRIS</b></li>
                             </ul>
-							</p>			
-                                                     
+                            </p>
+                            <p>The YOLO format was used for annotations. The <i>*.txt</i> file are formatted with
+                                one line for each object in the image following the provided format:
+                            <pre>class x_center y_center width height</pre>
+                            Bounding box coordinates should be in the normalized xywh format (ranging from 0 to 1).
+                            If box coordinates are expressed in pixels, x_center and width should be divided by the
+                            image width, and y_center and height should be divided by the image height. Class
+                            numbers should be zero-indexed (start with 0).</p>
+                            <p>Regarding the test split of the dataset, we recorded videos and sampled sampled every
+                                x seconds. Then we manually labeled the classes using <a
+                                    href="https://app.roboflow.com/">RoboFlow</a>.</p>
+
+                            <img src="assets/roboflow.jpeg" style="width: 100%;"></br>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -150,7 +257,8 @@
                     <div class="section-inner">
                         <h2 class="heading"><a id="dataset"></a>Dataset</h2>
                         <div class="content">
-                            <p>Descrivere i dati utilizzati fornendo i link per il download</p>
+                            <p>The dataset consists of approximately 1000 images.</p>
+                            <img src="assets/labels.jpg" style="width: 100%;">
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -160,15 +268,95 @@
                         <h2 class="heading"><a id="results"></a>Results</h2>
                         <div class="content">
 							<h3>Qualitative Results</h3>
-							<p>Fornire esempi di applicazione del metodo con immagini e video</p>
-							<h3>Quantitative Results</h3>
-							<p>Fornire una descrizione delle performance del metodo usando
-							delle opportune metriche</p>
-							<p>Per esempio:<br>
-							Fornire su un numero di immagini non inferiore a 30 i dati relativi
-							a FP, FN, TP.							
-							</p>
-                        </div><!--//content-->
+                            <div id="video-carousel" class="splide">
+                                <div class="splide__track">
+                                  <ul class="splide__list">
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=gbc3Odf51Ec">
+                                     <img src="https://img.youtube.com/vi/gbc3Odf51Ec/hqdefault.jpg">
+                                    </li>
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=AEkw8cpiJr4">
+                                        <img src="https://img.youtube.com/vi/AEkw8cpiJr4/hqdefault.jpg">
+                                    </li>
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=0a7Bvfw9LXU">
+                                        <img src="https://img.youtube.com/vi/0a7Bvfw9LXU/hqdefault.jpg">
+                                    </li>
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=Ehtl8rn1yM8">
+                                        <img src="https://img.youtube.com/vi/Ehtl8rn1yM8/hqdefault.jpg">
+                                    </li>
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=AUR7rTMQq4M">
+                                        <img src="https://img.youtube.com/vi/AUR7rTMQq4M/hqdefault.jpg">
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+							<h2>Quantitative Results</h3>
+							The following section will list the metrics used to measure the performance of the detection model.
+                            <h3>Definitions</h3>
+                            <h4>Intersection Over Union (IOU)</h4>
+                            <p>Intersection Over Union (IOU) is a measure that evaluates the overlap between two bounding boxes.
+                                It requires a ground truth bounding box and a predicted bounding box.</br>
+                                IOU is given by the overlapping area between the predicted bounding box and the ground truth bounding box divided by
+                                the area of union between them:
+                            <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/iou.jpeg" style="width: 50%;"></div>
+                            where "Area of Intersection" is the area where the two bounding boxes overlap, and "Area of Union" is the total area
+                            covered by both bounding boxes. The IoU gives a value between 0 and 1, where 0 indicates no overlap and 1 indicates
+                            complete overlap. We can determine whether the detection is correct (True Positive) or not (False Positive) by applying
+                            a threshold.
+                            </p>
+                            <p>
+                            <ul>
+                                <li>✅ <b>True Positive (TP)</b>: A correct detection. Detection with IOU ≥ threshold.<br>
+                                    The model <b>predicted</b> a label and the entity associated with the
+                                    label <b>was present</b> in the image.</li>
+                                <li>❌ <b>False Positive (FP)</b>: A wrong detection. Detection with IOU &lt; threshold.<br>
+                                    The model <b>predicted</b> a label and entity associated with the label
+                                    <b>was not present</b> in the image.
+                                </li>
+                                <li>❌ <b>False Negative (FN)</b>:
+                                    The model <b>didn't predict</b> a label and the entity associated with the label <b>was present</b> in the
+                                    image.</li>
+                                <li>✅ <b>True Negative (TN)</b>:
+                                    The model <b>didn't predict</b> a label and the entity associated with the label <b>was not present</b> in the
+                                    image.<br>
+                                    In the object detection task there are many possible bounding boxes that should not be detected within an image.
+                                    Thus, TN would be all possible bounding boxes that were corrrectly not detected (so many possible boxes within
+                                    an image). That's why it is not used by the metrics.</li>
+                            </ul>
+                            </p>
+                            <h4>Precision</h4>
+                            <p>Precision is the ability of a model to identify only the relevant objects. It is the percentage of correct positive
+                                predictions and is given by:$$ P = {TP \over TP + FP} = {TP \over all\; detection}$$
+                                The denominator represents the total number of bounding boxes proposed by the model.</p>
+                            <h4>Recall</h4>
+                            <p>Recall is the ability of a model to find all the relevant cases (all ground truth bounding boxes). It is the
+                                percentage of true positive detected among all relevant ground truths and is given by:
+                                $$ R = {TP \over TP + FN} = {TP \over all\; ground\; truth}$$
+                                The denominator represents the number of ground truth bounding boxes.</p>
+                            <h4>Confusion Matrix</h4>
+                            <p>The confusion matrix is a method for summarizing a classification algorithm’s performance.
+                                The diagonal line shows the significance of the prediction outcomes in the confusion matrix; the horizontal and vertical lines represent false negatives and false positives, respectively.
+                                <section id="confusion-carousel" class="splide">
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            <li class="splide__slide center">
+                                                <div>
+                                                    <img src="assets/confusion_matrix_val.png" alt="">
+                                                    <h4>Validation</h4>
+                                                </div>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <div>
+                                                    <img src="assets/confusion_matrix_test.png" alt="">
+                                                    <h4>
+                                                        Test
+                                                    </h4>
+                                                </div>
+                                            </li>
+                                      </ul>
+                                    </div>
+                                  </section>
+                            </p>
+                            </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
                 

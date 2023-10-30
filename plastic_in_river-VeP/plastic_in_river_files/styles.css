@@ -534,3 +534,19 @@ iframe {
     width: 1360px;
   }
 }
+/* .splide__slide img {
+  width: 100%;
+  height: 100%;
+} */
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.splide__slide div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
