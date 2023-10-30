@@ -332,6 +332,13 @@
                                 percentage of true positive detected among all relevant ground truths and is given by:
                                 $$ R = {TP \over TP + FN} = {TP \over all\; ground\; truth}$$
                                 The denominator represents the number of ground truth bounding boxes.</p>
+                            <h4>Mean Average Precision</h4>
+                            <p>Another numerical metric for evaluating performance is the Average Precision (AP). It is obtained by calculating the
+                            area under the Precision x Recall curve interpolated at 11 points for each of <i>n</i> the class. Once the average precision for each
+                            class is obtained, the Mean Average Precision (mAP) is calculated as follows: 
+                            $$ mAP = {1 \over n}{\sum_{i=1}^{n} AP_{i}} $$ 
+                            </p>
+                            <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/results.png" style="width: 100%;"></div>
                             <h4>Confusion Matrix</h4>
                             <p>The confusion matrix is a method for summarizing a classification algorithm’s performance.
                                 The diagonal line shows the significance of the prediction outcomes in the confusion matrix; the horizontal and vertical lines represent false negatives and false positives, respectively.
@@ -355,6 +362,24 @@
                                       </ul>
                                     </div>
                                   </section>
+                            </p>
+                            <h4>Box precision vs Confusion Matrix</h4>
+                            <p>These metrics evaluate distinct aspects of a model's performance.
+                                Box precision measures the accuracy of predicted bounding boxes compared to the actual ground truth boxes using
+                                IoU (Intersection over Union) as the metric. Confusion matrix precision, on the other hand, focuses on overall
+                                classification accuracy across all classes and does not consider the geometric accuracy of predictions. It's
+                                important to note that a bounding box can be geometrically accurate (true positive) even if the class prediction is
+                                wrong, leading to differences between box precision and confusion matrix precision. </p>
+                            <h4>Conclusions</h4>
+                            <p>
+                                The main goal of the project is to maximize the identification of waste, even at the cost of tolerating some false
+                                positives, such as mistakenly identifying debris as waste. Therefore, it is crucial to focus primarily on optimizing the
+                                recall. This metric assesses how much of what is actually present is correctly identified, and a high-recall model is
+                                prone to label marginally relevant examples.
+                                In the context of our project we have a recall of approximately 0.66 means that the model is capturing about 66% of the
+                                actual instances of waste.  This is in line with the project's emphasis on maximizing the identification of waste, even if it
+                                means accepting some false positives. This trade-off can be acceptable, and the model can be considered successful in achieving its
+                                primary objective.
                             </p>
                             </div><!--//content-->
                     </div><!--//section-inner-->                 
