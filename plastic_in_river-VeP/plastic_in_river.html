@@ -23,6 +23,23 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="plastic_in_river_files/photoswipe-lightbox.umd.min.js"></script>
+    <script src="plastic_in_river_files/photoswipe.umd.min.js"></script>
+    <link rel="stylesheet" href="plastic_in_river_files/photoswipe.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var lightbox = new PhotoSwipeLightbox({
+          bgOpacity: 0.4,
+          gallery: '#gallery--getting-started',
+          children: 'a',
+          // dynamic import is not supported in UMD version
+          pswpModule: PhotoSwipe 
+        });
+
+        lightbox.init();
+    });
+    </script>
+
     <script>
         MathJax = {
           tex: {
@@ -43,8 +60,6 @@
                     keyboard: true,
                     paginationKeyboard: true,
                 }
-
-                
 
                 let video = new Splide('#video-carousel', {
                     type     : 'loop',
@@ -338,7 +353,11 @@
                             class is obtained, the Mean Average Precision (mAP) is calculated as follows: 
                             $$ mAP = {1 \over n}{\sum_{i=1}^{n} AP_{i}} $$ 
                             </p>
-                            <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/results.png" style="width: 100%;"></div>
+                            <div class="pswp-gallery" style="display: flex; justify-content: center; margin: 2rem;" id="gallery--getting-started">
+                                <a data-pswp-src="assets/results.png" data-pswp-width="1920" data-pswp-height="960" target="_blank">
+                                    <img src="assets/results.png" style="width: 100%; cursor: zoom-in;">
+                                </a>
+                            </div>
                             <h4>Confusion Matrix</h4>
                             <p>The confusion matrix is a method for summarizing a classification algorithm’s performance.
                                 The diagonal line shows the significance of the prediction outcomes in the confusion matrix; the horizontal and vertical lines represent false negatives and false positives, respectively.
