@@ -6,7 +6,6 @@ Il progetto è stato sviluppato nell'ambito del progetto finale del corso di Vis
 - **Antonella Bonelli** (68791)
 - **Simona Calocero** (68395)
 - **Marco Rosa** (60315)
-</br>
 
 ### Obiettivo
 L'obiettivo principale di questo progetto è lo sviluppo di un software che tramite tecniche di visione artificiale permetta di identificare e classificare gli oggetti di rifiuto presenti in immagini e video acquisite lungo le rive dei fiumi.</br>
@@ -15,7 +14,6 @@ Per il raggiungimento degli obiettivi sono stati eseguiti i seguenti passi:
 1. Ricerca, aggregazione ed adeguamento di dati provenienti da fonti diverse
 1. Addestramento di un modello di object detection
 1. Utilizzo e valutazione delle performance del modello
-</br>
 
 ### Tecnologie utilizzate
 1. Python 3
