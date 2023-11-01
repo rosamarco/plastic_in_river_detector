@@ -13,7 +13,8 @@ Per il raggiungimento degli obiettivi sono stati eseguiti i seguenti passi:
 
 1. Ricerca, aggregazione ed adeguamento di dati provenienti da fonti diverse
 1. Addestramento di un modello di object detection
-1. Utilizzo e valutazione delle performance del modello
+1. Utilizzo del modello su dati reali e valutazione delle performance
+</br>
 
 ### Tecnologie utilizzate
 1. Python 3

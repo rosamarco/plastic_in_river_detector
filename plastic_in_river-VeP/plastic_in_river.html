@@ -117,15 +117,12 @@
                             <p>
                                 This project aims to train a <b>CNN</b> (Convolutional Neural Network) model for the detection
                                 and classification of <b>plastic pollution in rivers</b>.<br/>
-                                The detector will classify objects into four distinct classes:
+                                The detector will classify objects into two distinct classes:
                                 <ul>
-                                    <li>plastic bottles</li>
-                                    <li>plastic bags</li>
-                                    <li>other plastic waste</li>
-                                    <li>non-plastic items</li>
+                                    <li>waste</li>
+                                    <li>debris</li>
                                </ul>
-                                For the realization we will use the <b>YOLO</b> (You Only Look Once) algorithm and the <b>Darknet</b> framework,
-                                all working on a <b>Colab</b> notebook.
+                                For the realization we will use the <b>YOLO</b> (You Only Look Once) working on a <b>Colab</b> notebook.
 							</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -136,12 +133,17 @@
                         <h2 class="heading" id="motivations">Motivations</h2>
                         <div class="content">
                             <p>
-                                Detecting plastic in rivers is a significant environmental challenge due to the increasing
-                                widespread plastic pollution of waterways and hence of oceans.</br>
-                                Monitor rivers with cameras placed along them that are able to detect in real time
-                                the presence of plastic in water could be very useful, for instance notifying the competent authorities
-                                in order to clean up the place.
+                                Detecting the presence of plastic in rivers poses a significant environmental challenge due to the increasingly
+                                widespread plastic contamination in waterways and, consequently, in the oceans. Monitoring rivers with cameras
+                                positioned along them, capable of real-time detection of plastic presence in the water, could be extremely useful. For
+                                instance, reporting to relevant authorities would enable intervention for site cleanup. Additionally, the solution could
+                                extend to innovative approaches such as autonomous collecting robots. These self-contained devices can be programmed to
+                                identify and collect plastic waste, thereby helping to mitigate the environmental impact.
                             </p>
+                            <div style="display: flex; justify-content: center; gap: 5%; margin: 2rem;">
+                                <img src="assets/cctv_cam.webp" style="width: 50%;">
+                                <img src="assets/waste-shark.jpg" style="width: 50%;">
+                            </div>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -154,9 +156,9 @@
                                 Project main objectives:
                             </p>
 							<ol>
-								<li>Explore the dataset</li>
-								<li>Train a CNN</li>
-								<li>Detect objects of interest</li>
+                                <li>Research, aggregation, and adaptation of data from various sources.</li>
+                                <li>Training of an object detection model.</li>
+                                <li>Deployment of the model on real data and evaluation of performance.</li>
 							</ol>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -251,17 +253,18 @@
                     <div class="section-inner">
                         <h2 class="heading"><a id="implementation"></a>Implementation and Code</h2>
                         <div class="content">
-                            <p>Descrivere la tecnologia utilizzata per risolvere il problema</p>
-							<p>Per esempio:<br>
-							<ul>
-							    <li>Python 3</li>
-								<li>ROS Melodic</li>
-								<li>OpenCV 4.2</li>								
-                            </ul>
-							</p>
-							
-							<p style="color: red">Link al repository Git con il codice<br>
-							Il codice deve contenere un file README con le istruzioni per eseguire il codice</p>
+                            <p>
+                                Link to GitHub repository:
+                                <a href="https://github.com/rosamarco/plastic_in_river_detector" target="_blank">
+                                    <img class="icon" src="https://github.com/favicon.ico"></img> GitHub</a>
+                            </p>
+                            <p>
+                                Link to the shared folder containing the resources used in the project:
+                                <a href="https://drive.google.com/drive/folders/1FuXaQC4JHdcJBVd9mniK8hEK6TpIsK8A" target="_blank">
+                                    <img class="icon" src="https://drive.google.com/favicon.ico"></img> Google Drive</a>
+                            </p>
+                            <script
+                                src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Frosamarco%2Fplastic_in_river_detector%2Fblob%2Fmain%2Fyolov8_plastic_in_river_detector.ipynb&style=default&type=ipynb&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
                                                      
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
