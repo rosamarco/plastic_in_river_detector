@@ -7,6 +7,7 @@ Il progetto è stato sviluppato nell'ambito del progetto finale del corso di Vis
 - **Simona Calocero** (68395)
 - **Marco Rosa** (60315)
 </br>
+
 ### Obiettivo
 L'obiettivo principale di questo progetto è lo sviluppo di un software che tramite tecniche di visione artificiale permetta di identificare e classificare gli oggetti di rifiuto presenti in immagini e video acquisite lungo le rive dei fiumi.</br>
 Per il raggiungimento degli obiettivi sono stati eseguiti i seguenti passi:
@@ -28,6 +29,6 @@ I notebook sono stati interamente sviluppati sulla piattaforma Google Colab. I f
 |  |  |
 | ----------- | ----------- |
 | [YOLOv8 Plastic in River Detector](https://github.com/rosamarco/plastic_in_river_detector/blob/main/yolov8_plastic_in_river_detector.ipynb)      | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rosamarco/plastic_in_river_detector/blob/main/yolov8_plastic_in_river_detector.ipynb) |
-| [<sup>(*)</sup>  YOLOv4 Plastic in River Detector](URL_DEL_NOTEBOOK2)  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](URL_DEL_NOTEBOOK2) |
+| [⁽*⁾  YOLOv4 Plastic in River Detector](URL_DEL_NOTEBOOK2)  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](URL_DEL_NOTEBOOK2) |
 
 ⁽*⁾ prima implementazione, successivamente usata come baseline per valutare le performance di v8
