@@ -552,3 +552,13 @@ iframe {
   align-items: center;
   padding: 1rem;
 }
+
+.markdown-body {
+  height: 90rem;
+  overflow-y: auto;
+}
+
+.icon {
+  height:auto;
+  width: 1.3em;
+}
