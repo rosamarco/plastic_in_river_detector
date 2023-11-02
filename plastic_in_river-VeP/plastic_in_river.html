@@ -110,33 +110,33 @@
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
 			
-			    <section class="about section">
+			    <section class="about section" id="introduction">
                     <div class="section-inner">
-                        <h2 class="heading" id="introduction">Introduction</h2>
+                        <h2 class="heading">Introduction</h2>
                         <div class="content">
                             <p>
-                                This project aims to train a <b>CNN</b> (Convolutional Neural Network) model for the detection
-                                and classification of <b>plastic pollution in rivers</b>.<br/>
+                                This project aims to train a <i>CNN</i> (Convolutional Neural Network) model for the detection
+                                and classification of <b>plastic waste in rivers</b>.<br/>
                                 The detector will classify objects into two distinct classes:
                                 <ul>
                                     <li>waste</li>
                                     <li>debris</li>
                                </ul>
-                                For the realization we will use the <b>YOLO</b> (You Only Look Once) working on a <b>Colab</b> notebook.
+                                For the realization we will use the <i>Roboflow</i> tool for labelling and the <i>YOLO</i> (You Only Look Once) algorithm working on a <i>Colab</i> notebook for implementation.
 							</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
 				
-				<section class="about section">
+				<section class="about section" id="motivations">
                     <div class="section-inner">
-                        <h2 class="heading" id="motivations">Motivations</h2>
+                        <h2 class="heading">Motivations</h2>
                         <div class="content">
                             <p>
                                 Detecting the presence of plastic in rivers poses a significant environmental challenge due to the increasingly
                                 widespread plastic contamination in waterways and, consequently, in the oceans. Monitoring rivers with cameras
-                                positioned along them, capable of real-time detection of plastic presence in the water, could be extremely useful. For
-                                instance, reporting to relevant authorities would enable intervention for site cleanup. Additionally, the solution could
+                                positioned along them, capable of <i>real-time detection of plastic presence in the water</i>, could be extremely useful.<br/>
+                                For instance, reporting to relevant authorities would enable intervention for site cleanup. Additionally, the solution could
                                 extend to innovative approaches such as autonomous collecting robots. These self-contained devices can be programmed to
                                 identify and collect plastic waste, thereby helping to mitigate the environmental impact.
                             </p>
@@ -148,9 +148,9 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 			
-                <section class="about section">
+                <section class="about section" id="goals">
                     <div class="section-inner">
-                        <h2 class="heading"><a id="goals"></a>Goals</h2>
+                        <h2 class="heading">Goals</h2>
                         <div class="content">
                             <p>
                                 Project main objectives:
@@ -164,43 +164,46 @@
                     </div><!--//section-inner-->
                 </section><!--//section-->
 				
-				<section class="about section">
+				<section class="about section" id="method">
                     <div class="section-inner">
-                        <h2 class="heading"><a id="method"></a>Method</h2>
+                        <h2 class="heading">Method</h2>
                         <div class="content">			
-                            <h4>Object Detection</h4>
+                            <h3>Object Detection</h3>
 
-                            <p>YOLO (You Only Look Once) is a real-time object detection algorithm first developed
-                                in
-                                2015. It is a single-stage object detector that uses a convolutional neural network
-                                (CNN) to predict the bounding boxes and class probabilities of objects in input
-                                images.
+                            <p><b>YOLO</b> (You Only Look Once) is a real-time object detection algorithm first developed
+                                in 2015. It is a <i>single-stage object detector</i> that uses a <b>CNN</b> (Convolutional Neural Network)
+                                to predict the bounding boxes and class probabilities of objects in input images.
                             </p>
 
-                            <p>One of the key advantages of YOLO is that it processes the entire image in one
-                                forward
-                                pass, making it faster and more efficient than two-stage object detector methods, as
-                                it
-                                eliminates the need for multiple stages making it suitable for applications such as
-                                real-time video analytics even on low-powered devices.</p>
+                            <p>One of the key advantages of YOLO is that it processes the entire image in <i>one
+                                forward pass</i>, making it faster and more efficient than two-stage object detector methods,
+                                as it eliminates the need for multiple stages making it suitable for applications such as
+                                <i>real-time video analytics even on low-powered devices</i>.</p>
 
                             <p>The basic idea behind YOLO algorithm can be broken down into several steps:</p>
 
                             <ol>
-                                <li>Input image is passed through a CNN to extract features from the image.</li>
-                                <li>The features are then passed through a series of fully connected layers, which
-                                    predict class probabilities and bounding box coordinates.</li>
-                                <li>The image is divided into a grid of cells, and each cell is responsible for
-                                    predicting a set of bounding boxes and class probabilities.</li>
-                                <li>The output of the network is a set of bounding boxes and class probabilities for
-                                    each cell.</li>
-                                <li>The bounding boxes are then filtered using a post-processing algorithm called
-                                    non-max suppression to remove overlapping boxes and choose the box with the
-                                    highest
-                                    probability.
+                                <li>
+                                    Input image is passed through a CNN to <i>extract features</i> from the image.
                                 </li>
-                                <li>The final output is a set of predicted bounding boxes and class labels for each
-                                    object in the image.</li>
+                                <li>
+                                    The features are then passed through a series of fully connected layers, which
+                                    <i>predict class probabilities and bounding box</i> coordinates.
+                                </li>
+                                <li>
+                                    The image is divided into a <i>grid of cells</i>, and each cell is responsible for
+                                    predicting a set of bounding boxes and class probabilities.
+                                </li>
+                                <li>
+                                    The output of the network is a set of bounding boxes and class probabilities for each cell.
+                                </li>
+                                <li>
+                                    The bounding boxes are then filtered using a post-processing algorithm called
+                                    <i>non-max suppression</i> to remove overlapping boxes and choose the box with the highest probability.
+                                </li>
+                                <li>
+                                    The final output is a set of predicted bounding boxes and class labels for each object in the image.
+                                </li>
                             </ol>
                             <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/yolo.png" style="width: 80%;"></div>
                             <p>YOLO has been developed in several versions, including YOLOv1 through YOLOv8. Each
@@ -209,59 +212,84 @@
                                 handling
                                 of small objects.</p>
                             <p>In this project In this project, we used the latest iteration of these YOLO models:
-                                <b>YOLOv8</b> released in 2023 by <a
-                                    href="https://docs.ultralytics.com/">Ultralytics</a>.
+                                <b>YOLOv8</b> released in 2023 by <a href="https://docs.ultralytics.com/">Ultralytics</a>.
                             </p>
                             <p>YOLO models are pre-trained on huge datasets such as COCO and ImageNet.
                                 They provide highly accurate predictions on classes they are pre-trained on
-                                and can also give the opportunity to fine-tune the model on a custom dataset.
-                            </p>
-                            <p>Fine-tuning involves training the model on new data for a certain number of epochs.
+                                and can also give the opportunity to fine-tune the model on a custom dataset. <br/>
+                                <b>Fine-tuning</b> involves training the model on new data for a certain number of epochs.
                                 During fine-tuning, the model adjusts its parameters to better adapt to the
-                                characteristics and objects present in the dataset.</p>
-
-                            <h4>Dataset Preparation</h4>
-                            <p>The dataset used in this project was created using proprietary images and images
-                                obtained
-                                from RoboFlow Universe. Specifically, <a
-                                    href="https://orca-tech.cn/en/datasets/FloW/FloW-Img">FloW-Img</a> and <a
-                                    href="https://universe.roboflow.com/ipsa-4wlge/wcb5g/dataset/17">WCB5G</a> were
-                                combined.</p>
-                            <p>Annotations were standardized into two categories:
-                            <ul>
-                                <li><b>WASTE</b></li>
-                                <li><b>DEBRIS</b></li>
-                            </ul>
+                                characteristics and objects present in the dataset.
                             </p>
-                            <p>The YOLO format was used for annotations. The <i>*.txt</i> file are formatted with
-                                one line for each object in the image following the provided format:
-                            <pre>class x_center y_center width height</pre>
-                            Bounding box coordinates should be in the normalized xywh format (ranging from 0 to 1).
-                            If box coordinates are expressed in pixels, x_center and width should be divided by the
-                            image width, and y_center and height should be divided by the image height. Class
-                            numbers should be zero-indexed (start with 0).</p>
-                            <p>Regarding the test split of the dataset, we recorded videos and sampled sampled every
-                                x seconds. Then we manually labeled the classes using <a
-                                    href="https://app.roboflow.com/">RoboFlow</a>.</p>
 
-                            <img src="assets/roboflow.jpeg" style="width: 100%;"></br>
+                            <h3>Dataset Preparation</h3>
+                            <h4>Training set</h4>
+                            <p>
+                                The model was trained combining two different datasets:
+                                <ul>
+                                    <li>
+                                        <a href="https://orca-tech.cn/en/datasets/FloW/FloW-Img">FloW-Img</a>:
+                                        dataset containing floating waste in different light conditions
+                                        with annotations also for small objects, from an academic research.
+                                    </li>
+                                    <li>
+                                        <a href="https://universe.roboflow.com/ipsa-4wlge/wcb5g/dataset/17">WCB5G</a>:
+                                        dataset with samples of debris, from the Roboflow Universe.
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>Annotations were standardized into two classes:
+                                <ul>
+                                    <li>
+                                        0: DEBRIS
+                                    </li>
+                                    <li>
+                                        1: WASTE
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                The YOLO format was used for annotations. The <i>*.txt</i> file are formatted with
+                                one line for each object in the image following the provided format:
+                                <pre>class x_center y_center width height</pre>
+                                Bounding box coordinates should be in the normalized xywh format (ranging from 0 to 1).
+                                If box coordinates are expressed in pixels, <i>x_center</i> and width should be divided by the
+                                image width, and <i>y_center</i> and height should be divided by the image height. Class
+                                numbers should be zero-indexed (start with 0).<br/>
+                                The final dataset consists of approximately 1000 images, divided as follows.
+                                <img src="assets/labels.jpg" style="width: 100%;"/>
+                            </p>
+                            <h4>Test set</h4>
+                            <p>
+                                We produced the test set recording videos along a local river, emulating a typical environment in which the detector should work.<br/>
+                                Then we sampled the videos every <i>x</i> seconds and we manually labeled the classes
+                                using the Roboflow annotation tool.
+                            </p>
+                            <p>
+                                <img src="assets/roboflow.jpeg" style="width: 100%;"/><br/>
+                            </p>
+                            <p>
+                                Link to the Roboflow project:
+                                <a href="https://app.roboflow.com/visione-e-percezione-mjmow" target="_blank">
+                                    <img class="icon" src="https://app.roboflow.com/favicon.ico"/> Roboflow</a>
+                            </p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
 				
-				<section class="about section">
+				<section class="about section" id="implementation">
                     <div class="section-inner">
-                        <h2 class="heading"><a id="implementation"></a>Implementation and Code</h2>
+                        <h2 class="heading">Implementation and Code</h2>
                         <div class="content">
                             <p>
-                                Link to GitHub repository:
+                                Link to the GitHub repository:
                                 <a href="https://github.com/rosamarco/plastic_in_river_detector" target="_blank">
-                                    <img class="icon" src="https://github.com/favicon.ico"></img> GitHub</a>
+                                    <img class="icon" src="https://github.com/favicon.ico"/> GitHub</a>
                             </p>
                             <p>
                                 Link to the shared folder containing the resources used in the project:
                                 <a href="https://drive.google.com/drive/folders/1FuXaQC4JHdcJBVd9mniK8hEK6TpIsK8A" target="_blank">
-                                    <img class="icon" src="https://drive.google.com/favicon.ico"></img> Google Drive</a>
+                                    <img class="icon" src="https://drive.google.com/favicon.ico"/> Google Drive</a>
                             </p>
                             <script
                                 src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Frosamarco%2Fplastic_in_river_detector%2Fblob%2Fmain%2Fyolov8_plastic_in_river_detector.ipynb&style=default&type=ipynb&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
@@ -270,66 +298,61 @@
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
 				
-				
-				<section class="about section">
+				<section class="about section" id="results">
                     <div class="section-inner">
-                        <h2 class="heading"><a id="dataset"></a>Dataset</h2>
-                        <div class="content">
-                            <p>The dataset consists of approximately 1000 images.</p>
-                            <img src="assets/labels.jpg" style="width: 100%;">
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-				
-				<section class="about section">
-                    <div class="section-inner">
-                        <h2 class="heading"><a id="results"></a>Results</h2>
+                        <h2 class="heading">Results</h2>
                         <div class="content">
 							<h3>Qualitative Results</h3>
+                            <p>
+                                Here we can see the detection results on some test videos.
+                            </p>
                             <div id="video-carousel" class="splide">
                                 <div class="splide__track">
                                   <ul class="splide__list">
+                                    <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=gbc3Odf51Ec">
+                                     <img src="https://img.youtube.com/vi/gbc3Odf51Ec/hqdefault.jpg"/>
+                                    </li>
                                     <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=AEkw8cpiJr4">
-                                        <img src="https://img.youtube.com/vi/AEkw8cpiJr4/hqdefault.jpg">
+                                        <img src="https://img.youtube.com/vi/AEkw8cpiJr4/hqdefault.jpg"/>
                                     </li>
                                     <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=0a7Bvfw9LXU">
-                                        <img src="https://img.youtube.com/vi/0a7Bvfw9LXU/hqdefault.jpg">
+                                        <img src="https://img.youtube.com/vi/0a7Bvfw9LXU/hqdefault.jpg"/>
                                     </li>
                                     <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=Ehtl8rn1yM8">
-                                        <img src="https://img.youtube.com/vi/Ehtl8rn1yM8/hqdefault.jpg">
+                                        <img src="https://img.youtube.com/vi/Ehtl8rn1yM8/hqdefault.jpg"/>
                                     </li>
                                   </ul>
                                 </div>
                               </div>
-							<h2>Quantitative Results</h2>
+							<h3>Quantitative Results</h3>
 							The following section will list the metrics used to measure the performance of the detection model.
-                            <h3>Definitions</h3>
                             <h4>Intersection Over Union (IOU)</h4>
-                            <p>Intersection Over Union (IOU) is a measure that evaluates the overlap between two bounding boxes.
+                            <p>
+                                <b>Intersection Over Union</b> (IOU) is a measure that evaluates the <i>overlap between two bounding boxes</i>.
                                 It requires a ground truth bounding box and a predicted bounding box.</br>
                                 IOU is given by the overlapping area between the predicted bounding box and the ground truth bounding box divided by
                                 the area of union between them:
                             </p>
                             <div style="display: flex; justify-content: center; margin: 2rem;"><img src="assets/iou.jpeg" style="width: 50%;"></div>
-                            <p>where "Area of Intersection" is the area where the two bounding boxes overlap, and "Area of Union" is the total area
+                            <p>where "<i>Area of Intersection</i>" is the area where the two bounding boxes overlap, and "<i>Area of Union</i>" is the total area
                             covered by both bounding boxes. The IoU gives a value between 0 and 1, where 0 indicates no overlap and 1 indicates
                             complete overlap. We can determine whether the detection is correct (True Positive) or not (False Positive) by applying
                             a threshold.
                             </p>
                             <p>
                             <ul>
-                                <li>✅ <b>True Positive (TP)</b>: A correct detection. Detection with IOU ≥ threshold.<br>
-                                    The model <b>predicted</b> a label and the entity associated with the
-                                    label <b>was present</b> in the image.</li>
-                                <li>❌ <b>False Positive (FP)</b>: A wrong detection. Detection with IOU &lt; threshold.<br>
-                                    The model <b>predicted</b> a label and entity associated with the label
-                                    <b>was not present</b> in the image.
+                                <li>✅ <b>True Positive</b> (TP): A correct detection. Detection with IOU ≥ threshold.<br>
+                                    The model <i>predicted</i> a label and the entity associated with the
+                                    label <i>was present</i> in the image.</li>
+                                <li>❌ <b>False Positive</b> (FP): A wrong detection. Detection with IOU &lt; threshold.<br>
+                                    The model <i>predicted</i> a label and entity associated with the label
+                                    <i>was not present</i> in the image.
                                 </li>
-                                <li>❌ <b>False Negative (FN)</b>:
-                                    The model <b>didn't predict</b> a label and the entity associated with the label <b>was present</b> in the
+                                <li>❌ <b>False Negative</b> (FN):
+                                    The model <i>didn't predict</i> a label and the entity associated with the label <i>was present</i> in the
                                     image.</li>
-                                <li>✅ <b>True Negative (TN)</b>:
-                                    The model <b>didn't predict</b> a label and the entity associated with the label <b>was not present</b> in the
+                                <li>✅ <b>True Negative</b> (TN):
+                                    The model <i>didn't predict</i> a label and the entity associated with the label <i>was not present</i> in the
                                     image.<br>
                                     In the object detection task there are many possible bounding boxes that should not be detected within an image.
                                     Thus, TN would be all possible bounding boxes that were corrrectly not detected (so many possible boxes within
@@ -337,18 +360,18 @@
                             </ul>
                             </p>
                             <h4>Precision</h4>
-                            <p>Precision is the ability of a model to identify only the relevant objects. It is the percentage of correct positive
+                            <p><b>Precision</b> is the ability of a model to <i>identify only the relevant objects</i>. It is the percentage of correct positive
                                 predictions and is given by:$$ P = {TP \over TP + FP} = {TP \over all\; detection}$$
                                 The denominator represents the total number of bounding boxes proposed by the model.</p>
                             <h4>Recall</h4>
-                            <p>Recall is the ability of a model to find all the relevant cases (all ground truth bounding boxes). It is the
+                            <p><b>Recall</b> is the ability of a model to <i>find all the relevant cases</i> (all ground truth bounding boxes). It is the
                                 percentage of true positive detected among all relevant ground truths and is given by:
                                 $$ R = {TP \over TP + FN} = {TP \over all\; ground\; truth}$$
                                 The denominator represents the number of ground truth bounding boxes.</p>
                             <h4>Mean Average Precision</h4>
-                            <p>Another numerical metric for evaluating performance is the Average Precision (AP). It is obtained by calculating the
-                            area under the Precision x Recall curve interpolated at 11 points for each of <i>n</i> the class. Once the average precision for each
-                            class is obtained, the Mean Average Precision (mAP) is calculated as follows: 
+                            <p>Another numerical metric for evaluating performance is the <b>Average Precision</b> (AP). It is obtained by calculating the
+                            <i>area under the Precision x Recall curve</i> interpolated at 11 points for each of <i>n</i> the class. Once the average precision for each
+                            class is obtained, the <b>Mean Average Precision</b> (mAP) is calculated as follows:
                             $$ mAP = {1 \over n}{\sum_{i=1}^{n} AP_{i}} $$ 
                             </p>
                             <div class="pswp-gallery" style="display: flex; justify-content: center; margin: 2rem;" id="gallery--getting-started">
@@ -357,8 +380,8 @@
                                 </a>
                             </div>
                             <h4>Confusion Matrix</h4>
-                            <p>The confusion matrix is a method for summarizing a classification algorithm’s performance.
-                                The diagonal line shows the significance of the prediction outcomes in the confusion matrix; the horizontal and vertical lines represent false negatives and false positives, respectively.
+                            <p>The <b>confusion matrix</b> is a method for summarizing a classification algorithm’s performance.
+                                The <i>diagonal line shows the significance of the prediction outcomes</i> in the confusion matrix; the horizontal and vertical lines represent false negatives and false positives, respectively.
                                 <section id="confusion-carousel" class="splide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
@@ -386,17 +409,18 @@
                                 IoU (Intersection over Union) as the metric. Confusion matrix precision, on the other hand, focuses on overall
                                 classification accuracy across all classes and does not consider the geometric accuracy of predictions. It's
                                 important to note that a bounding box can be geometrically accurate (true positive) even if the class prediction is
-                                wrong, leading to differences between box precision and confusion matrix precision. </p>
-                            <h4>Conclusions</h4>
+                                wrong, leading to differences between box precision and confusion matrix precision.
+                            </p>
+                            <h3>Conclusions</h3>
                             <p>
-                                The main goal of the project is to maximize the identification of waste, even at the cost of tolerating some false
-                                positives, such as mistakenly identifying debris as waste. Therefore, it is crucial to focus primarily on optimizing the
-                                recall. This metric assesses how much of what is actually present is correctly identified, and a high-recall model is
-                                prone to label marginally relevant examples.
-                                In the context of our project, setting a confidence threshold of 0.35, we have a recall of approximately 0.66 means that the model is capturing about 66% of the
-                                actual instances of waste.  This is in line with the project's emphasis on maximizing the identification of waste, even if it
-                                means accepting some false positives. This trade-off can be acceptable, and the model can be considered successful in achieving its
-                                primary objective.
+                                The main goal of the project is to <i>maximize the identification of waste</i>, even at the cost of tolerating some false
+                                positives, such as mistakenly identifying debris as waste. Therefore, it is crucial to focus primarily on <i>optimizing the
+                                recall</i>. This metric assesses how much of what is actually present is correctly identified, and a high-recall model is
+                                prone to label marginally relevant examples. <br/>
+                                In the context of our project, setting a confidence threshold of 0.35, we have a recall of approximately 0.66 means that <i>the model is capturing about 66% of the
+                                actual instances of waste</i>.  This is in line with the project's emphasis on maximizing the identification of waste, even if it
+                                means accepting some false positives.<br/>
+                                This trade-off can be acceptable, and the model can be considered successful in achieving its primary objective.
                             </p>
                             </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -436,23 +460,23 @@
                         <h2 class="heading">References and Links</h2>
 						<div class="content">
 							<div class="item">
-								<a href="https://pjreddie.com/darknet/" target="_blank">
+								<a href="https://docs.ultralytics.com/" target="_blank">
                                     Ultralytics YOLOv8
                                 </a>
                             </div>
                             <div class="item">
-								<a href="https://pjreddie.com/darknet/yolo/" target="_blank">
-                                    YOLO
-                                </a>
-                            </div>
-                            <div class="item">
 								<a href="https://docs.roboflow.com/" target="_blank">
-                                    Roboflow
+                                    RoboFlow
                                 </a>
                             </div>
                             <div class="item">
                                 <a href="https://github.com/rafaelpadilla/Object-Detection-Metrics" target="_blank">
                                     Object Detection Metrics
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Cheng_FloW_A_Dataset_and_Benchmark_for_Floating_Waste_Detection_in_ICCV_2021_paper.pdf" target="_blank">
+                                    FloW Article
                                 </a>
                             </div>
                             <div class="item">
